@@ -1,0 +1,65 @@
+{
+  // Disable the default VS Code formatter for these files
+  "editor.formatOnSave": true,
+  "editor.defaultFormatter": "dbaeumer.vscode-eslint",
+  // Explicitly assign ESLint as the code formatter per language layer
+  "[javascript]": {
+    "editor.defaultFormatter": "vscode.typescript-language-features"
+  },
+  "[typescript]": {
+    "editor.defaultFormatter": "vscode.typescript-language-features"
+  },
+  "[vue]": {
+    "editor.defaultFormatter": "dbaeumer.vscode-eslint"
+  },
+  "[css]": {
+    "editor.defaultFormatter": "vscode.css-language-features"
+  },
+  "[html]": {
+    "editor.defaultFormatter": "dbaeumer.vscode-eslint"
+  },
+  "[markdown]": {
+    "editor.defaultFormatter": "dbaeumer.vscode-eslint"
+  },
+  "[json]": {
+    "editor.defaultFormatter": "vscode.json-language-features"
+  },
+  "[jsonc]": {
+    "editor.defaultFormatter": "dbaeumer.vscode-eslint"
+  },
+  // Enable Flat Config support and auto-fix rules on save
+  "eslint.useFlatConfig": true,
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": "explicit"
+  },
+  // Ensure ESLint validates all configured document extension profiles
+  "eslint.validate": [
+    "javascript",
+    "javascriptreact",
+    "typescript",
+    "typescriptreact",
+    "vue",
+    "html",
+    "markdown",
+    "css",
+    "json",
+    "jsonc"
+  ],
+  // Prevent VS Code's built-in TS server from clashing with Volar
+  "js/ts.tsdk.path": "node_modules/typescript/lib",
+  // Ensure path auto-complete resolves Nuxt aliases (~/, @/) accurately
+  "js/ts.suggest.paths": true,
+  // Force quick suggestions inside Vue template tag attributes
+  "editor.quickSuggestions": {
+    "strings": "on",
+    "comments": "off",
+    "other": "on"
+  },
+  "js/ts.experimental.useTsgo": false,
+  "json.schemas": [
+    {
+      "fileMatch": ["public/companion/manifest.json"],
+      "url": "https://schemastore.org"
+    }
+  ]
+}

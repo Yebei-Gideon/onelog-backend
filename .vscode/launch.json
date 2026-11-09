@@ -1,0 +1,17 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Launch Chrome with Companion Extension",
+      "type": "chrome",
+      "request": "launch",
+      "url": "http://localhost:3000",
+      "runtimeArgs": [
+        "--load-extension=${workspaceFolder}/public/companion",
+        "--no-first-run",
+        "--no-default-browser-check"
+      ],
+      "webRoot": "${workspaceFolder}/app"
+    }
+  ]
+}
