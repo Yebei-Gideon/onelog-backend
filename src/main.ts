@@ -1,7 +1,7 @@
 // src/main.ts
+import { AppModule, ObserveInstrument } from '#app.module.js'
 import { Logger, ValidationPipe, VersioningType } from '@nestjs/common'
 import { NestFactory } from '@nestjs/core'
-import { AppModule, ObserveInstrument } from '#app.module.js'
 
 const logger = new Logger('main.ts')
 
@@ -35,6 +35,9 @@ async function bootstrap() {
       'tauri://localhost',
       'http://tauri.localhost',
       'https://tauri.localhost',
+      'https://onelog-theta.vercel.app',
+      process.env.FRONTEND_URL ?? 'http://localhost:3000',
+      (process.env.ALLOWED_ORIGINS ?? '').split(',').map((origin) => origin.trim()),
     ],
     credentials: true,
     methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
